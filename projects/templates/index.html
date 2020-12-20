@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>查看所有项目</title>
+</head>
+<body>
+    <table style="border: 1px solid black;">
+        <tr>
+            <th>项目名称</th>
+            <th>单位名称</th>
+            <th>总额度</th>
+            <th>剩余额度</th>
+        </tr>
+        {% for project in project_list %}
+        <tr>
+            <td><a href="{% url 'projects:project' project.id %}">{{ project.project_name }}</a></td>
+            <td>{{ project.company_name }}</td>
+            <td>{{ project.total_budget }}</td>
+            <td>{{ project.budget_left }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
