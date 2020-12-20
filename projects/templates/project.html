@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>项目详情-{{ project.project_name }}</title>
+</head>
+<body>
+<h2>项目详情</h2>
+<ul>
+    <li>项目名称：{{ project.project_name }}</li>
+    <li>单位名称：{{ project.company_name }}</li>
+    <li>总额度：{{ project.total_budget }}</li>
+    <li>剩余额度：{{ project.budget_left }} </li>
+</ul>
+<table style="border: 1px solid black;">
+    <tr>
+        <th>申请金额</th>
+        <th>申请状态</th>
+    </tr>
+    {% for detail in detail_list %}
+    <tr>
+        <td>{{ detail.budget }}</td>
+        <td>{{ detail.status_name }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
